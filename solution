@@ -1,0 +1,23 @@
+Given an integer array nums of length n where all the integers of nums are in the range [1, n] and each integer appears once or twice, return an array of all the integers that appears twice.
+
+You must write an algorithm that runs in O(n) time and uses only constant extra space.
+
+ ..................SOLUTION................
+
+
+class Solution {
+    public List<Integer> findDuplicates(int[] nums) {
+        List<Integer> l1 = new ArrayList<>();
+        int ans[] = new int[nums.length+1];
+        for(int i : nums){
+            if (ans[i] == 0){
+                ans[i] += 1;
+            }
+            else{
+                l1.add(i);
+            }
+        }
+        // l1.remove(0);
+        return l1;
+    }
+}
